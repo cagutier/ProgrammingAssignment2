@@ -1,7 +1,20 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## makeCacheMatrix
+## Subject: creates a cacheMatrix object
+## Input argument:
+##  - Receives as argument a matrix object x. It is supposed that it has a inverse matrix.
+## Output:
+##  - Object with the following structure:
+##    Attributes: 
+##     - private x: original matrix
+##     - private im: calculated inverse matrix for the original matrix x
+##    Methods:
+##     - set(y): sets a new matrix value to attribute x. 
+##     - get(): return the x original matrix
+##     - setinvmatrix(im): assigns a matrix to attribute im representing thus the inverse matrix
+##     - getinmatrix(): returns the value of inverse matrix im
 
 makeCacheMatrix <- function(x = matrix()) {
   # im holds the cache inverse matrix of the given one x
@@ -26,8 +39,16 @@ makeCacheMatrix <- function(x = matrix()) {
        getinvmatrix = getinvmatrix)
 }
 
-
-## Write a short comment describing this function
+## cacheSolve 
+## Subject: compute the inverse matrix of the given cacheMatrix create with 
+## function makeCacheMatrix. It only computes the inverse matrix when it has not been
+## calculated before for the given cacheMatrix or when its original matrix has been
+## changed 
+##
+## Input argument:
+##  - cacheMatrix object created with function makeCacheMatrix
+## Output
+##  - matrix object representing the inverse matrix of the original x matrix
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
